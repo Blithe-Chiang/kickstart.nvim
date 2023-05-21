@@ -258,7 +258,7 @@ require('lazy').setup({
       context_commentstring = { enable = true, enable_autocmd = false },
     },
   },
-
+  require 'kickstart.plugins.lsp',
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -584,3 +584,4 @@ require('nvim-treesitter.configs').setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
