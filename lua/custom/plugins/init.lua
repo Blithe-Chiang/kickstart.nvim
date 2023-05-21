@@ -22,22 +22,6 @@ return {
     config = function()
       require("hop").setup({
         -- Configuration here, or leave empty to use defaults
-
-        -- normal mode (easymotion-like)
-        vim.api.nvim_set_keymap("n", "<Leader><Leader>b", "<cmd>HopWordBC<CR>", {noremap=true});
-        vim.api.nvim_set_keymap("n", "<Leader><Leader>w", "<cmd>HopWordAC<CR>", {noremap=true});
-        vim.api.nvim_set_keymap("n", "<Leader><Leader>j", "<cmd>HopLineAC<CR>", {noremap=true});
-        vim.api.nvim_set_keymap("n", "<Leader><Leader>k", "<cmd>HopLineBC<CR>", {noremap=true});
-
-        -- visual mode (easymotion-like)
-        vim.api.nvim_set_keymap("x", "<Leader><Leader>w", "<cmd>HopWordAC<CR>", {noremap=true});
-        vim.api.nvim_set_keymap("x", "<Leader><Leader>b", "<cmd>HopWordBC<CR>", {noremap=true});
-        vim.api.nvim_set_keymap("x", "<Leader><Leader>j", "<cmd>HopLineAC<CR>", {noremap=true});
-        vim.api.nvim_set_keymap("x", "<Leader><Leader>k", "<cmd>HopLineBC<CR>", {noremap=true});
-
-        -- (sneak-like) in all mode.
-        vim.api.nvim_set_keymap("", "s", "<cmd>HopChar2AC<CR>", {noremap=false});
-        vim.api.nvim_set_keymap("", "S", "<cmd>HopChar2BC<CR>", {noremap=false});
       })
     end
   },

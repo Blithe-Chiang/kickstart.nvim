@@ -2,6 +2,7 @@ return {
   {
     -- use lsp zero to configure LSPs
     'VonHeikemen/lsp-zero.nvim',
+    event = "VeryLazy",
     branch = 'v2.x',
     dependencies = {
       -- LSP Support
