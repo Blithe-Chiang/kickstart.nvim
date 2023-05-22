@@ -61,7 +61,7 @@ vim.keymap.set('n', '<leader>o', "<cmd>NeoTreeReveal<cr>", { desc = 'Reveal in F
 
 
 -- Sessions
-vim.keymap.set('n', '<leader>kr', "<cmd>SessionManager load_session<cr>", { desc = 'Load Sessions' })
+vim.keymap.set('n', '<leader>r', "<cmd>SessionManager load_session<cr>", { desc = 'Load Sessions' })
 
 -- hop.nvim
 -- normal mode (easymotion-like)
