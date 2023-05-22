@@ -14,10 +14,23 @@ return {
       })
     end
   },
+  -- {
+  --   -- better navigation in current buffer
+  --   "phaazon/hop.nvim",
+  --   enabled = false,
+  --   version = "v2", -- very recommend
+  --   event = "VeryLazy",
+  --   config = function()
+  --     require("hop").setup({
+  --       -- Configuration here, or leave empty to use defaults
+  --     })
+  --   end
+  -- },
   {
     -- better navigation in current buffer
-    "phaazon/hop.nvim",
-    version = "v2", -- very recommend
+    "aznhe21/hop.nvim",
+    enabled = true,
+    branch= 'fix-some-bugs',
     event = "VeryLazy",
     config = function()
       require("hop").setup({
