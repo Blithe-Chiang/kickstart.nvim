@@ -274,6 +274,9 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
+-- highlight current line
+vim.o.cursorline = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
