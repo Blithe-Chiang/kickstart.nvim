@@ -1,9 +1,13 @@
 
--- Set <space> as the leader key
+-- Set the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+local leader = ' '
+vim.g.mapleader = leader
+vim.g.maplocalleader = leader
+
+-- map jj to Esc
+vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap=true })
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
