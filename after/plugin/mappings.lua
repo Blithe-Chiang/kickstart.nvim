@@ -13,8 +13,8 @@ vim.keymap.set('n', "<C-s>", "<cmd>w!<cr>", { desc = "Force write" })
 vim.keymap.set('n', "<C-q>", "<cmd>q!<cr>", { desc = "Force quit" })
 vim.keymap.set('n', "|", "<cmd>vsplit<cr>", { desc = "Vertical Split" })
 vim.keymap.set('n', "\\", "<cmd>split<cr>", { desc = "Horizontal Split" })
-vim.keymap.set('n', "<leader>c", "<cmd>bd<cr>", { desc = "Close Buffer" })
-vim.keymap.set('n', "<leader>C", "<cmd>bd!<cr>", { desc = "Force close Buffer" })
+vim.keymap.set('n', "<leader>c", "<cmd>BufferClose<cr>", { desc = "Close Buffer" })
+vim.keymap.set('n', "<leader>C", "<cmd>BufferClose!<cr>", { desc = "Force close Buffer" })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -49,6 +49,7 @@ vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, { des
 vim.keymap.set('n', '<leader>fF', function () require("telescope.builtin").find_files { hidden = true, no_ignore = true } end, { desc = 'Find all files' })
 vim.keymap.set('n', '<leader>fc', require('telescope.builtin').grep_string, { desc = 'Find for word under cursor' })
 vim.keymap.set('n', '<leader>fw', require('telescope').extensions.live_grep_args.live_grep_args , { desc = 'Find words' })
+vim.keymap.set('v', '<leader>fw', require("telescope-live-grep-args.shortcuts").grep_visual_selection, { desc = 'Find selection' })
 vim.keymap.set('n', "<leader>gc", function() require("telescope.builtin").git_commits() end, {desc = "Git commits" })
 vim.keymap.set('n', "<leader>gt", function() require("telescope.builtin").git_status() end, {desc = "Git status" })
 
