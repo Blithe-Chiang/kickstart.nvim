@@ -16,6 +16,9 @@ return {
       {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
       {'L3MON4D3/LuaSnip'},                  -- Required
+
+      -- Additional lua configuration, makes nvim stuff amazing!
+      'folke/neodev.nvim',
     }
   },
   {

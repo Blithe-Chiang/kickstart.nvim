@@ -1,6 +1,9 @@
 -- LSP settings
 local lsp = require('lsp-zero').preset({})
 
+-- Setup neovim lua configuration
+require('neodev').setup()
+
 lsp.on_attach(function(client, bufnr)
   -- TODO: keymappings ...
   -- lsp.default_keymaps({buffer = bufnr})
