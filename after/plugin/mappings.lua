@@ -51,6 +51,10 @@ vim.keymap.set('n', "<leader>gt", function() require("telescope.builtin").git_st
 vim.keymap.set('n', '<leader>e', "<cmd>Neotree toggle<cr>", { desc = 'Toggle FileTree' })
 vim.keymap.set('n', '<leader>o', "<cmd>NeoTreeReveal<cr>", { desc = 'Reveal in FileTree' })
 
+
+-- Sessions
+vim.keymap.set('n', '<leader>kr', "<cmd>SessionManager load_session<cr>", { desc = 'Load Sessions' })
+
 -- hop.nvim
 -- normal mode (easymotion-like)
 vim.keymap.set("n", "<Leader><Leader>b", "<cmd>HopWordBC<CR>", {noremap=true});
