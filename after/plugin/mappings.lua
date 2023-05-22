@@ -15,6 +15,7 @@ vim.keymap.set('n', "|", "<cmd>vsplit<cr>", { desc = "Vertical Split" })
 vim.keymap.set('n', "\\", "<cmd>split<cr>", { desc = "Horizontal Split" })
 vim.keymap.set('n', "<leader>c", "<cmd>BufferClose<cr>", { desc = "Close Buffer" })
 vim.keymap.set('n', "<leader>C", "<cmd>BufferClose!<cr>", { desc = "Force close Buffer" })
+vim.keymap.set('n', "<leader>ke", "<cmd>e!<cr>", { desc = "Discard" })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
