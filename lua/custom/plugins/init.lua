@@ -74,4 +74,17 @@ return {
       end
     end,
   },
+  {
+    -- terminal setup
+    "akinsho/toggleterm.nvim",
+    tags = '*',
+    event = "VeryLazy",
+    config = function()
+      require("toggleterm").setup{
+	      direction = "horizontal",
+	      size = 20,
+	      open_mapping = [[<M-j>]]
+      }
+    end
+  },
 }

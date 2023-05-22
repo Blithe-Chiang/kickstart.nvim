@@ -278,6 +278,8 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
+-- set termguicolors
+vim.o.termguicolors = true
 
 -- highlight current line
 vim.o.cursorline = true
