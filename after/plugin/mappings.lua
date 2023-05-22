@@ -20,6 +20,12 @@ vim.keymap.set('n', "<leader>C", "<cmd>bd!<cr>", { desc = "Force close Buffer" }
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+-- Remap for quickfix list
+vim.keymap.set('n', "[q", "<cmd>cprev<cr>", { desc = "Previous item in quickfix list" })
+vim.keymap.set('n', "]q", "<cmd>cnext<cr>", { desc = "Next item in quickfix list" })
+vim.keymap.set('n', "[Q", "<cmd>cfirst<cr>", { desc = "First item in quickfix list" })
+vim.keymap.set('n', "]Q", "<cmd>clast<cr>", { desc = "Last item in quickfix list" })
+
 -- -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
