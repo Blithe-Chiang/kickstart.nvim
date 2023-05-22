@@ -274,6 +274,7 @@ require('lazy').setup({
 -- [[ Setting options ]]
 -- See `:help vim.o`
 
+
 -- highlight current line
 vim.o.cursorline = true
 
@@ -282,6 +283,15 @@ vim.o.hlsearch = false
 
 -- Make line numbers default
 vim.wo.number = true
+
+-- Relative line number
+vim.o.relativenumber = false
+
+-- fixendofline
+vim.o.fixendofine = false
+
+-- spell
+vim.o.spell = false
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
