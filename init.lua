@@ -15,6 +15,15 @@ vim.cmd([[
   set nofixendofline
 ]])
 
+
+-- settings in neovide
+if (vim.g.neovide) then
+  -- useful for macos
+  vim.g.neovide_input_macos_alt_is_meta = true
+  -- disable cursor animation
+  vim.g.neovide_cursor_animation_length = 0
+end
+
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -283,6 +292,9 @@ require('lazy').setup({
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
+
+-- set scrolloff
+vim.o.scrolloff = 5
 
 -- set termguicolors
 vim.o.termguicolors = true
