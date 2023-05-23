@@ -1,6 +1,9 @@
 
 -- [[ Basic Keymaps ]]
 
+-- map jj to Esc
+vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap=true })
+
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
