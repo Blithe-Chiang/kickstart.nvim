@@ -35,8 +35,8 @@ map('n', '<M-c>', '<Cmd>BufferClose<CR>', opts)
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
 -- Magic buffer-picking mode
--- TODO: this conflicts with previous item on quickfix so disable it now
-map('n', '<M-p>', '<Cmd>BufferPick<CR>', opts)
+-- TODO: fix conflict with pin buffer
+-- map('n', '<M-p>', '<Cmd>BufferPick<CR>', opts)
 
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
