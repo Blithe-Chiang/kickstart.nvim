@@ -9,6 +9,12 @@ vim.g.maplocalleader = leader
 -- map jj to Esc
 vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap=true })
 
+-- fix strange endofline
+vim.cmd([[
+  set noendofline
+  set nofixendofline
+]])
+
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -292,9 +298,6 @@ vim.wo.number = true
 
 -- Relative line number
 vim.o.relativenumber = false
-
--- fixendofline
-vim.o.fixendofine = false
 
 -- spell
 vim.o.spell = false
