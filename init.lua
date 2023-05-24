@@ -124,10 +124,7 @@ require('lazy').setup({
     },
     opts = function()
       local actions = require "telescope.actions"
-      -- require telescope and load extensions as necessary
       local lga_actions = require("telescope-live-grep-args.actions")
-      local telescope = require "telescope"
-      telescope.load_extension "live_grep_args"
       return {
         defaults = {
           path_display = { "truncate" },
@@ -150,8 +147,6 @@ require('lazy').setup({
               ["<C-p>"] = actions.cycle_history_prev,
               ["<C-j>"] = actions.move_selection_next,
               ["<C-k>"] = actions.move_selection_previous,
-              -- set in extensions field?
-              ["<C-g>"] = lga_actions.quote_prompt()
             },
             n = { ["q"] = actions.close },
           },
@@ -161,6 +156,14 @@ require('lazy').setup({
             require("telescope.themes").get_dropdown {
               -- even more opts
             }
+          },
+          ["live_grep_args"] = {
+            mappings = {
+              i = {
+                -- set in extensions field?
+                ["<C-g>"] = lga_actions.quote_prompt()
+              },
+            },
           },
         }
       }
@@ -212,8 +215,8 @@ require('lazy').setup({
 pcall(require('telescope').load_extension, 'fzf')
 -- Enable ui select
 pcall(require('telescope').load_extension, 'ui-select')
-
-
+-- Enable live_grep_args
+pcall(require('telescope').load_extension, 'live_grep_args')
 -- vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 -- [[ Configure Treesitter ]]
