@@ -120,6 +120,7 @@ require('lazy').setup({
       'nvim-lua/plenary.nvim',
       { "nvim-telescope/telescope-fzf-native.nvim", enabled = vim.fn.executable "make" == 1, build = "make" },
       "nvim-telescope/telescope-live-grep-args.nvim",
+      'nvim-telescope/telescope-ui-select.nvim',
     },
     opts = function()
       local actions = require "telescope.actions"
@@ -155,6 +156,13 @@ require('lazy').setup({
             n = { ["q"] = actions.close },
           },
         },
+        extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown {
+              -- even more opts
+            }
+          },
+        }
       }
     end,
   },
@@ -202,6 +210,8 @@ require('lazy').setup({
 -- [[ Configure Telescope ]]
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+-- Enable ui select
+pcall(require('telescope').load_extension, 'ui-select')
 
 
 -- vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
