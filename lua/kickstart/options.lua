@@ -10,6 +10,9 @@ vim.o.termguicolors = true
 -- highlight current line
 vim.o.cursorline = true
 
+-- highlight column
+vim.wo.cursorcolumn = true
+
 -- Set highlight on search
 vim.o.hlsearch = false
 
