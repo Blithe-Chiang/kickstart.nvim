@@ -77,16 +77,19 @@ require('lazy').setup({
       on_attach = function(bufnr)
         vim.keymap.set('n', '[c', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to Previous Hunk' })
         vim.keymap.set('n', ']c', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
-        vim.keymap.set('n', "gb",  function() vim.cmd('Git blame') end, {desc = "View full Git blame" })
         vim.keymap.set('n', "gl",  require("gitsigns").blame_line, { desc = "View Git blame" })
-        vim.keymap.set('n', "<leader>ge",  function() vim.cmd('Gedit') end, {desc = "Edit current version of file" })
         vim.keymap.set('n', "<leader>gd",  require("gitsigns").diffthis, { desc = "View Git diff" })
+        vim.keymap.set('n', "<leader>gD",  function() require("gitsigns").diffthis('~') end, { desc = "View Git diff last commit" })
         vim.keymap.set('n', "<leader>gp",  require("gitsigns").preview_hunk, { desc = "Preview Git hunk" })
         vim.keymap.set('n', "<leader>gh",  require("gitsigns").reset_hunk, { desc = "Reset Git hunk" })
         vim.keymap.set('n', "<leader>gr",  require("gitsigns").reset_buffer, { desc = "Reset Git buffer" })
         vim.keymap.set('n', "<leader>gS",  require("gitsigns").stage_buffer, { desc = "Stage Git buffer" })
         vim.keymap.set({'n','v'}, "<leader>gs",  require("gitsigns").stage_hunk, { desc = "Stage Git hunk" })
         vim.keymap.set({'n','v'}, "<leader>gu",  require("gitsigns").undo_stage_hunk, { desc = "Unstage Git hunk" })
+        -- Fugitive mappings
+        vim.keymap.set('n', "gb",  function() vim.cmd('Git blame') end, {desc = "View full Git blame" })
+        vim.keymap.set('n', "<leader>ge",  function() vim.cmd('Gedit') end, {desc = "Edit current version of file" })
+        vim.keymap.set('n', "<leader>gg",  function() vim.cmd('Git') end, {desc = "Open Fugitive" })
       end,
     },
   },

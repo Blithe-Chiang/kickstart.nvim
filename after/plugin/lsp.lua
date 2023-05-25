@@ -25,7 +25,7 @@ lsp.on_attach(function(client, bufnr)
   nmap('<leader>ld', require('telescope.builtin').lsp_document_symbols, '[D]ocument symbols')
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
-  nmap('<leader>gD', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
+  nmap('gD', require('telescope.builtin').lsp_type_definitions, 'Type [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
   -- nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
