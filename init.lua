@@ -75,8 +75,9 @@ require('lazy').setup({
         changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '[c', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to Previous Hunk' })
-        vim.keymap.set('n', ']c', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
+        -- for not conflict with original diff mapping
+        vim.keymap.set('n', '[g', require('gitsigns').prev_hunk, { buffer = bufnr, desc = 'Go to Previous Hunk' })
+        vim.keymap.set('n', ']g', require('gitsigns').next_hunk, { buffer = bufnr, desc = 'Go to Next Hunk' })
         vim.keymap.set('n', "gl",  require("gitsigns").blame_line, { desc = "View Git blame" })
         vim.keymap.set('n', "<leader>gd",  require("gitsigns").diffthis, { desc = "View Git diff" })
         vim.keymap.set('n', "<leader>gD",  function() require("gitsigns").diffthis('~') end, { desc = "View Git diff last commit" })
