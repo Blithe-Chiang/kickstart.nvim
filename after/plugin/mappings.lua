@@ -56,6 +56,7 @@ vim.keymap.set('n', '<leader>fw', require('telescope').extensions.live_grep_args
 vim.keymap.set('v', '<leader>fw', require("telescope-live-grep-args.shortcuts").grep_visual_selection, { desc = 'Find selection' })
 vim.keymap.set('n', "<leader>gc", function() require("telescope.builtin").git_commits() end, {desc = "Git commits" })
 vim.keymap.set('n', "<leader>gt", function() require("telescope.builtin").git_status() end, {desc = "Git status" })
+vim.keymap.set('n', "<cr>", function() require('telescope').extensions.cmdline.cmdline({}) end, {desc = "Command" })
 
 
 -- File tree
