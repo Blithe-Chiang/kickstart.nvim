@@ -9,9 +9,14 @@ vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap=true })
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
 -- Standard Operations
-vim.keymap.set('n', "<leader>w", "<cmd>w<cr>", { desc = "Save" })
 vim.keymap.set('n', "<leader>q", "<cmd>confirm q<cr>", { desc = "Quit" })
-vim.keymap.set('n', "<leader>n", "<cmd>enew<cr>", { desc = "New File" })
+vim.keymap.set('n', "<leader>ew", "<cmd>w<cr>", { desc = "Save File" })
+vim.keymap.set('n', "<leader>en", "<cmd>enew<cr>", { desc = "New File" })
+vim.keymap.set('n', "<leader>er", "<cmd>e!<cr>", { desc = "Discard File" })
+-- File tree
+vim.keymap.set('n', '<leader>ee', "<cmd>Neotree toggle<cr>", { desc = 'Toggle FileTree' })
+vim.keymap.set('n', '<leader>eo', "<cmd>NeoTreeReveal<cr>", { desc = 'Reveal in FileTree' })
+
 -- vim.keymap.set('n', "<C-s>", "<cmd>w!<cr>", { desc = "Force write" })
 -- see :h i_CTRL-Q
 -- vim.keymap.set('n', "<C-q>", "<cmd>q!<cr>", { desc = "Force quit" })
@@ -19,7 +24,6 @@ vim.keymap.set('n', "|", "<cmd>vsplit<cr>", { desc = "Vertical Split" })
 vim.keymap.set('n', "\\", "<cmd>split<cr>", { desc = "Horizontal Split" })
 vim.keymap.set('n', "<leader>c", "<cmd>BufferClose<cr>", { desc = "Close Buffer" })
 vim.keymap.set('n', "<leader>C", "<cmd>BufferClose!<cr>", { desc = "Force close Buffer" })
-vim.keymap.set('n', "<leader>ke", "<cmd>e!<cr>", { desc = "Discard" })
 
 -- Remap for dealing with word wrap
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -57,11 +61,6 @@ vim.keymap.set('n', '<leader>fw', require('telescope').extensions.live_grep_args
 vim.keymap.set('v', '<leader>fw', require("telescope-live-grep-args.shortcuts").grep_visual_selection, { desc = 'Find selection' })
 vim.keymap.set('n', "<leader>gc", function() require("telescope.builtin").git_commits() end, {desc = "Git commits" })
 vim.keymap.set('n', "<leader>gt", function() require("telescope.builtin").git_status() end, {desc = "Git status" })
-
-
--- File tree
-vim.keymap.set('n', '<leader>e', "<cmd>Neotree toggle<cr>", { desc = 'Toggle FileTree' })
-vim.keymap.set('n', '<leader>o', "<cmd>NeoTreeReveal<cr>", { desc = 'Reveal in FileTree' })
 
 
 -- Sessions
