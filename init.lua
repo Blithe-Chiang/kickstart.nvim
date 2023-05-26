@@ -125,7 +125,6 @@ require('lazy').setup({
       { "nvim-telescope/telescope-fzf-native.nvim", enabled = vim.fn.executable "make" == 1, build = "make" },
       "nvim-telescope/telescope-live-grep-args.nvim",
       -- 'nvim-telescope/telescope-ui-select.nvim',
-      'jonarrien/telescope-cmdline.nvim',
     },
     opts = function()
       local actions = require "telescope.actions"
@@ -223,8 +222,6 @@ pcall(require('telescope').load_extension, 'fzf')
 -- Enable live_grep_args
 pcall(require('telescope').load_extension, 'live_grep_args')
 -- vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-
-pcall(require('telescope').load_extension, 'cmdline')
 
 -- [[ Configure Treesitter ]]
 -- See `:help nvim-treesitter`
