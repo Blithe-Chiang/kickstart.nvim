@@ -52,7 +52,7 @@ map('n', '<M-c>', '<Cmd>BufferClose<CR>', opts)
 
 map('n', '<leader>br', '<Cmd>BufferCloseBuffersRight<CR>', opts)
 map('n', '<leader>bl', '<Cmd>BufferCloseBuffersLeft<CR>', opts)
-map('n', '<leader>bo', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
+map('n', '<leader>bo', '<Cmd>BufferCloseAllButVisible<CR>', opts)
 
 -- Magic buffer-picking mode
 -- TODO: fix conflict with pin buffer
