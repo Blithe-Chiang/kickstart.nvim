@@ -43,6 +43,8 @@ return {
     "andymass/vim-matchup",
     event = "BufRead",
     config = function()
+      -- disable highlight match paren
+      vim.g.matchup_matchparen_enabled = 0
     end,
   },
   {

@@ -12,6 +12,7 @@ return {
         theme = theme,
         component_separators = '|',
         section_separators = '',
+        globalstatus = true,
       },
       sections = {
         lualine_c = {

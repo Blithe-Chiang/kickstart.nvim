@@ -8,8 +8,22 @@ vim.api.nvim_set_keymap('i', 'jj', '<Esc>', { noremap=true })
 -- See `:help vim.keymap.set()`
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 
+function QuitWithConfim()
+  local current_windows = vim.api.nvim_list_wins()
+  if #current_windows == 1 then
+    local choice = vim.fn.confirm("Quit neovim?", "&Yes\n&No", 2)
+    if choice == 1 then
+      vim.cmd('q')
+    else
+      -- vim.cmd('echo "Canceled."')
+    end
+  else
+      vim.cmd('q')
+  end
+end
+
 -- Standard Operations
-vim.keymap.set('n', "<leader>q", "<cmd>confirm q<cr>", { desc = "Quit" })
+vim.keymap.set('n', "<leader>q", QuitWithConfim, { desc = "Quit" })
 vim.keymap.set('n', "<leader>ew", "<cmd>w<cr>", { desc = "Save File" })
 vim.keymap.set('n', "<leader>en", "<cmd>enew<cr>", { desc = "New File" })
 vim.keymap.set('n', "<leader>er", "<cmd>e!<cr>", { desc = "Discard File" })

@@ -11,7 +11,7 @@ vim.o.termguicolors = true
 vim.o.cursorline = true
 
 -- highlight column
-vim.wo.cursorcolumn = true
+vim.wo.cursorcolumn = false
 
 -- Set highlight on search
 vim.o.hlsearch = false
