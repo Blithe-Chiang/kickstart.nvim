@@ -19,6 +19,9 @@ vim.o.hlsearch = false
 -- Make line numbers default
 vim.wo.number = true
 
+-- set ward wrap
+vim.wo.wrap = false
+
 -- Relative line number
 vim.o.relativenumber = false
 

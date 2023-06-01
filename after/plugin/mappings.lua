@@ -43,6 +43,14 @@ vim.keymap.set('n', "<leader>C", "<cmd>BufferClose!<cr>", { desc = "Force close 
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
+
+-- UI settings
+function ToggleWordWrap()
+  local value = vim.wo.wrap
+  vim.wo.wrap = not value
+end
+vim.keymap.set('n', '<leader>uw', ToggleWordWrap, { desc = 'Toggle word wrap' })
+
 -- Remap for quickfix list
 vim.keymap.set('n', "[q", "<cmd>cprev<cr>", { desc = "Previous item in quickfix list" })
 vim.keymap.set('n', "]q", "<cmd>cnext<cr>", { desc = "Next item in quickfix list" })
