@@ -1,5 +1,10 @@
 -- LSP settings
-local lsp = require('lsp-zero').preset({})
+local ok, lsp_zero = pcall(require, "lsp-zero")
+if not ok then
+  return
+end
+
+local lsp = lsp_zero.preset({})
 
 -- Setup neovim lua configuration
 require('neodev').setup()
