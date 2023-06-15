@@ -81,6 +81,7 @@ vim.keymap.set('n', '<leader>fF', function () require("telescope.builtin").find_
 vim.keymap.set('n', '<leader>fc', require('telescope.builtin').grep_string, { desc = 'Find for word under cursor' })
 vim.keymap.set('n', '<leader>fw', require('telescope').extensions.live_grep_args.live_grep_args , { desc = 'Find words' })
 vim.keymap.set('v', '<leader>fw', require("telescope-live-grep-args.shortcuts").grep_visual_selection, { desc = 'Find selection' })
+vim.keymap.set('n', "<leader>gb", function() require("telescope.builtin").git_branches() end, {desc = "Git branches" })
 vim.keymap.set('n', "<leader>gc", function() require("telescope.builtin").git_commits() end, {desc = "Git commits" })
 vim.keymap.set('n', "<leader>gt", function() require("telescope.builtin").git_status() end, {desc = "Git status" })
 
