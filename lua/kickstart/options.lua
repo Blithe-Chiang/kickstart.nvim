@@ -77,6 +77,20 @@ vim.cmd([[
   set nofixendofline
 ]])
 
+-- tab and indent
+vim.cmd[[
+  " tab
+  set expandtab                    " expand tabs to spaces
+  set smarttab
+  set shiftround
+
+  " indent
+  set autoindent smartindent shiftround
+  set shiftwidth=4
+  set tabstop=4
+  set softtabstop=4                " insert mode tab and backspace use 4 spaces
+]]
+
 -- settings in neovide
 if (vim.g.neovide) then
   -- useful for macos
