@@ -91,6 +91,22 @@ vim.cmd[[
   set softtabstop=4                " insert mode tab and backspace use 4 spaces
 ]]
 
+-- disable diagnostic in third-party lib
+-- GROUPS:
+local disable_diagnostic_group = vim.api.nvim_create_augroup("DisableDiagnostic", { clear = true })
+-- AUTO-COMMANDS:
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = {
+    "**/node_modules/**",
+    "node_modules",
+    "/node_modules/*",
+  },
+  callback = function()
+    vim.diagnostic.disable(0)
+  end,
+  group = disable_diagnostic_group,
+})
+
 -- settings in neovide
 if (vim.g.neovide) then
   -- useful for macos
