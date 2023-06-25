@@ -1,5 +1,5 @@
 -- set theme.
-local theme = 'github'
+local theme = 'gruvbox'
 
 return {
   {
@@ -135,5 +135,37 @@ return {
         vim.cmd[[colorscheme github_dark_dimmed]]
       end
     end
-  }
+  },
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("kanagawa").setup({
+        commentStyle = { italic = false},
+        keywordStyle = { italic = false},
+      })
+      if theme == 'kanagawa' then
+        vim.cmd[[colorscheme kanagawa-wave]]
+      end
+    end
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("gruvbox").setup({
+        italic = {
+          strings = false,
+          comments = false,
+          operators = false,
+          folds = false,
+        },
+      })
+      if theme == 'gruvbox' then
+        vim.cmd[[colorscheme gruvbox]]
+      end
+    end
+  },
 }
