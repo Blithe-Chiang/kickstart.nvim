@@ -1,5 +1,5 @@
 -- set theme.
-local theme = 'onedark'
+local theme = 'github'
 
 return {
   {
@@ -41,7 +41,7 @@ return {
   {
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
-    enabled = theme == 'onedark',
+    lazy = false,
     priority = 1000,
     config = function()
       require('onedark').setup {
@@ -83,17 +83,16 @@ return {
           background = true, -- use background color for virtual text
         },
       }
-      vim.cmd([[
-        colorscheme onedark
-      ]])
+      if theme == 'onedark' then
+        vim.cmd[[colorscheme onedark]]
+      end
     end,
   },
   {
     "Mofiqul/vscode.nvim",
-    -- event = "UIEnter",
-    enabled = theme == 'vscode',
+    lazy = false,
+    priority = 1000,
     config = function()
-      local c = require('vscode.colors').get_colors()
       require('vscode').setup({
         -- Alternatively set style in setup
         -- style = 'light',
@@ -119,7 +118,22 @@ return {
         --   Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
         -- }
       })
-      require('vscode').load()
+      if theme == 'vscode' then
+        require('vscode').load()
+      end
     end,
   },
+  {
+    "projekt0n/github-nvim-theme",
+    lazy = false,
+    priority = 1000,
+    config = function ()
+      require("github-theme").setup({
+
+      })
+      if theme == 'github' then
+        vim.cmd[[colorscheme github_dark_dimmed]]
+      end
+    end
+  }
 }
