@@ -29,6 +29,7 @@ vim.keymap.set('n', "<leader>en", "<cmd>enew<cr>", { desc = "New File" })
 vim.keymap.set('n', "<leader>er", "<cmd>e!<cr>", { desc = "Discard File" })
 -- File tree
 vim.keymap.set('n', '<leader>ee', "<cmd>Neotree toggle<cr>", { desc = 'Toggle FileTree' })
+vim.keymap.set('n', '<leader>eg', "<cmd>Neotree toggle git_status<cr>", { desc = 'Toggle Git Status' })
 vim.keymap.set('n', '<leader>eo', "<cmd>NeoTreeReveal<cr>", { desc = 'Reveal in FileTree' })
 
 -- vim.keymap.set('n', "<C-s>", "<cmd>w!<cr>", { desc = "Force write" })
@@ -62,6 +63,9 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>df', require('telescope.builtin').diagnostics, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
+-- Pickup theme
+vim.keymap.set('n', '<leader>ft', require('telescope.builtin').colorscheme, { desc = 'Pick up theme' })
 
 -- telescope
 -- See `:help telescope.builtin`
