@@ -83,9 +83,9 @@ return {
     event = "VeryLazy",
     config = function()
       require("toggleterm").setup{
-	      direction = "horizontal",
-	      size = 20,
-	      open_mapping = [[<M-j>]]
+        direction = "horizontal",
+        size = 20,
+        open_mapping = [[<M-j>]],
       }
     end
   },
