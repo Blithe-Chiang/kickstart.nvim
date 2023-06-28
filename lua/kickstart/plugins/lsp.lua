@@ -40,4 +40,8 @@ return {
       "hrsh7th/cmp-nvim-lsp",
     },
   },
+  {
+    "Bekaboo/dropbar.nvim",
+    event="BufRead",
+  }
 }
