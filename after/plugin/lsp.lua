@@ -7,7 +7,10 @@ end
 local lsp = lsp_zero.preset({})
 
 -- Setup neovim lua configuration
-require('neodev').setup()
+local neodev_ok, neodev = pcall(require, 'neodev')
+if neodev_ok then
+  neodev.setup({})
+end
 
 lsp.on_attach(function(client, bufnr)
   -- TODO: keymappings ...
@@ -59,7 +62,11 @@ end)
 lsp.setup()
 
 -- You need to setup `cmp` after lsp-zero
-local cmp = require('cmp')
+local cmp_ok, cmp = pcall(require, 'cmp')
+if not cmp_ok then
+  return
+end
+
 local cmp_action = require('lsp-zero').cmp_action()
 
 local luasnip = require 'luasnip'

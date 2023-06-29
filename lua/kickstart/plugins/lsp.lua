@@ -30,6 +30,14 @@ return {
     end,
   },
   {
+    "folke/neoconf.nvim",
+    config = function ()
+      require("neoconf").setup({
+        -- override any of the default settings here
+      })
+    end
+  },
+  {
     -- nvim completion
     "hrsh7th/nvim-cmp",
     commit = "a9c701fa7e12e9257b3162000e5288a75d280c28", -- https://github.com/hrsh7th/nvim-cmp/issues/1382
