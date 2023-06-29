@@ -29,9 +29,15 @@ return {
   {
     -- better navigation in current buffer
     "aznhe21/hop.nvim",
-    enabled = true,
+    cmd = {
+      "HopWordBC",
+      "HopWordAC",
+      "HopLineAC",
+      "HopLineBC",
+      "HopChar2AC",
+      "HopChar2BC",
+    },
     branch= 'fix-some-bugs',
-    event = "VeryLazy",
     config = function()
       require("hop").setup({
         -- Configuration here, or leave empty to use defaults
@@ -80,7 +86,9 @@ return {
     -- terminal setup
     "akinsho/toggleterm.nvim",
     tags = '*',
-    event = "VeryLazy",
+    keys = {
+      "<M-j>"
+    },
     config = function()
       require("toggleterm").setup{
         direction = "horizontal",

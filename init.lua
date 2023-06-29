@@ -6,6 +6,10 @@ local leader = ' '
 vim.g.mapleader = leader
 vim.g.maplocalleader = leader
 
+
+-- disable builtin plugins
+vim.g.loaded_matchit = 1
+
 -- seperate options to dedicate file
 require("kickstart.options")
 
@@ -34,7 +38,14 @@ require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
   -- Git related plugins
-  'tpope/vim-fugitive',
+  {
+    'tpope/vim-fugitive',
+    cmd = {
+      "Git",
+      "Gedit",
+      "G",
+    }
+  },
   -- Github extension for fugitive
   'tpope/vim-rhubarb',
 
@@ -61,7 +72,9 @@ require('lazy').setup({
   },
 
   -- Useful plugin to show you pending keybinds.
-  { 'folke/which-key.nvim',
+  {
+    'folke/which-key.nvim',
+    event = "VeryLazy",
     init = function()
       vim.o.timeout = true
       vim.o.timeoutlen = 700
@@ -71,6 +84,7 @@ require('lazy').setup({
   {
     -- Adds git releated signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
+    event = "VeryLazy",
     opts = {
       -- See `:help gitsigns.txt`
       signs = {

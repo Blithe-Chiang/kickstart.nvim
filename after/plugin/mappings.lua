@@ -94,16 +94,11 @@ vim.keymap.set('n', "<leader>gt", function() require("telescope.builtin").git_st
 vim.keymap.set('n', '<leader>r', "<cmd>SessionManager load_session<cr>", { desc = 'Load Sessions' })
 
 -- hop.nvim
--- normal mode (easymotion-like)
-vim.keymap.set("n", "<Leader><Leader>b", "<cmd>HopWordBC<CR>", {noremap=true});
-vim.keymap.set("n", "<Leader><Leader>w", "<cmd>HopWordAC<CR>", {noremap=true});
-vim.keymap.set("n", "<Leader><Leader>j", "<cmd>HopLineAC<CR>", {noremap=true});
-vim.keymap.set("n", "<Leader><Leader>k", "<cmd>HopLineBC<CR>", {noremap=true});
--- visual mode (easymotion-like)
-vim.keymap.set("x", "<Leader><Leader>w", "<cmd>HopWordAC<CR>", {noremap=true});
-vim.keymap.set("x", "<Leader><Leader>b", "<cmd>HopWordBC<CR>", {noremap=true});
-vim.keymap.set("x", "<Leader><Leader>j", "<cmd>HopLineAC<CR>", {noremap=true});
-vim.keymap.set("x", "<Leader><Leader>k", "<cmd>HopLineBC<CR>", {noremap=true});
+-- normal & visual mode (easymotion-like)
+vim.keymap.set({"n","x"}, "<Leader><Leader>b", "<cmd>HopWordBC<CR>", {noremap=true});
+vim.keymap.set({"n","x"}, "<Leader><Leader>w", "<cmd>HopWordAC<CR>", {noremap=true});
+vim.keymap.set({"n","x"}, "<Leader><Leader>j", "<cmd>HopLineAC<CR>", {noremap=true});
+vim.keymap.set({"n","x"}, "<Leader><Leader>k", "<cmd>HopLineBC<CR>", {noremap=true});
 -- (sneak-like) in all mode.
 vim.keymap.set("", "s", "<cmd>HopChar2AC<CR>", {noremap=false});
 vim.keymap.set("", "S", "<cmd>HopChar2BC<CR>", {noremap=false});
