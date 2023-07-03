@@ -38,6 +38,32 @@ return {
     end
   },
   {
+    -- formatters
+    "jose-elias-alvarez/null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "mason.nvim" },
+    opts = function()
+      local nls = require("null-ls")
+      return {
+        root_dir = require("null-ls.utils").root_pattern(
+          ".null-ls-root",
+          ".neoconf.json",
+          ".git",
+          "Makefile",
+          "package.json"
+        ),
+        sources = {
+          -- nls.builtins.formatting.fish_indent,
+          -- nls.builtins.diagnostics.fish,
+          nls.builtins.formatting.stylua,
+          nls.builtins.formatting.prettier,
+          -- nls.builtins.formatting.shfmt,
+          -- nls.builtins.diagnostics.flake8,
+        },
+      }
+    end,
+  },
+  {
     -- nvim completion
     "hrsh7th/nvim-cmp",
     commit = "a9c701fa7e12e9257b3162000e5288a75d280c28", -- https://github.com/hrsh7th/nvim-cmp/issues/1382
