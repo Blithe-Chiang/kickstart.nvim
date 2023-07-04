@@ -1,5 +1,5 @@
 -- set theme.
-local theme = 'gruvbox'
+local theme = 'everforest'
 
 return {
   {
@@ -132,7 +132,7 @@ return {
 
       })
       if theme == 'github' then
-        vim.cmd[[colorscheme github_dark_dimmed]]
+        vim.cmd[[colorscheme github_dark]]
       end
     end
   },
@@ -167,5 +167,18 @@ return {
         vim.cmd[[colorscheme gruvbox]]
       end
     end
+  },
+  {
+    "sainnhe/everforest",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- disable italic
+      vim.g.everforest_disable_italic_comment = 0
+      vim.g.everforest_background = 'soft'
+      if theme == 'everforest' then
+        vim.cmd[[colorscheme everforest]]
+      end
+    end,
   },
 }
