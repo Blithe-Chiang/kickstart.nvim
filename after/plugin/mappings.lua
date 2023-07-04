@@ -89,7 +89,6 @@ vim.keymap.set('n', "<leader>gb", function() require("telescope.builtin").git_br
 vim.keymap.set('n', "<leader>gc", function() require("telescope.builtin").git_commits() end, {desc = "Git commits" })
 vim.keymap.set('n', "<leader>gt", function() require("telescope.builtin").git_status() end, {desc = "Git status" })
 
-
 -- Sessions
 vim.keymap.set('n', '<leader>r', "<cmd>SessionManager load_session<cr>", { desc = 'Load Sessions' })
 
@@ -102,3 +101,15 @@ vim.keymap.set({"n","x"}, "<Leader><Leader>k", "<cmd>HopLineBC<CR>", {noremap=tr
 -- (sneak-like) in all mode.
 vim.keymap.set("", "s", "<cmd>HopChar2AC<CR>", {noremap=false});
 vim.keymap.set("", "S", "<cmd>HopChar2BC<CR>", {noremap=false});
+
+-- Fugitive mappings
+vim.keymap.set('n', "gb",  function() vim.cmd('Git blame') end, {desc = "View full Git blame" })
+vim.keymap.set('n', "<leader>ge",  function() vim.cmd('Gedit') end, {desc = "Edit current version of file" })
+vim.keymap.set('n', "<leader>gg",  function() vim.cmd('Git') end, {desc = "Open Fugitive" })
+vim.keymap.set('n', "<leader>gw", "<cmd>Git log -g stash<CR>", { desc = "List Git Stash" })
+vim.keymap.set('n', "<leader>gl", ':Git log --since=', { desc = "Recent Git Log" })
+
+-- window management
+vim.keymap.set('n', "<leader>ww", "<C-w>o", { desc = "Color other window" })
+
+

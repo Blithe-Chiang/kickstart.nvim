@@ -107,10 +107,6 @@ require('lazy').setup({
         vim.keymap.set('n', "<leader>gS",  require("gitsigns").stage_buffer, { desc = "Stage Git buffer" })
         vim.keymap.set({'n','v'}, "<leader>gs",  require("gitsigns").stage_hunk, { desc = "Stage Git hunk" })
         vim.keymap.set({'n','v'}, "<leader>gu",  require("gitsigns").undo_stage_hunk, { desc = "Unstage Git hunk" })
-        -- Fugitive mappings
-        vim.keymap.set('n', "gb",  function() vim.cmd('Git blame') end, {desc = "View full Git blame" })
-        vim.keymap.set('n', "<leader>ge",  function() vim.cmd('Gedit') end, {desc = "Edit current version of file" })
-        vim.keymap.set('n', "<leader>gg",  function() vim.cmd('Git') end, {desc = "Open Fugitive" })
       end,
     },
   },
