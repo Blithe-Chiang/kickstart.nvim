@@ -111,6 +111,18 @@ return {
             desc = "send all item to quickfix"
           },
         },
+        find_engine = {
+          -- rg is map with finder_cmd
+          ['rg'] = {
+            options = {
+              ['no-ignore'] = {
+                value="--no-ignore",
+                desc="disable ignore filter",
+                icon="[NI]"
+              },
+            }
+          },
+        }
       }
     end
   },
