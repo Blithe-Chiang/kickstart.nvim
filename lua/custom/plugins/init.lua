@@ -98,6 +98,23 @@ return {
     end,
   },
   {
+    -- search and replace
+    "nvim-pack/nvim-spectre",
+    tags = '*',
+    event = "BufRead",
+    opts = function()
+      return {
+        mapping={
+          ['send_to_qf'] = {
+            map = "<C-q>",
+            cmd = "<cmd>lua require('spectre.actions').send_to_qf()<CR>",
+            desc = "send all item to quickfix"
+          },
+        },
+      }
+    end
+  },
+  {
     -- terminal setup
     "akinsho/toggleterm.nvim",
     tags = '*',
