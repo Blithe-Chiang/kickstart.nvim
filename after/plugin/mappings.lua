@@ -104,7 +104,7 @@ vim.keymap.set("", "s", "<cmd>HopChar2AC<CR>", {noremap=false});
 vim.keymap.set("", "S", "<cmd>HopChar2BC<CR>", {noremap=false});
 
 -- Fugitive mappings
-vim.keymap.set('n', "gb",  function() vim.cmd('Git blame') end, {desc = "View full Git blame" })
+vim.keymap.set('n', "gL",  function() vim.cmd('Git blame') end, {desc = "View full Git blame" })
 vim.keymap.set('n', "<leader>ge",  function() vim.cmd('Gedit') end, {desc = "Edit current version of file" })
 vim.keymap.set('n', "<leader>gg",  function() vim.cmd('Git') end, {desc = "Open Fugitive" })
 vim.keymap.set('n', "<leader>gw", "<cmd>Git log -g stash<CR>", { desc = "List Git Stash" })
