@@ -76,11 +76,6 @@ return {
     },
   },
   {
-    "Bekaboo/dropbar.nvim",
-    enabled = false,
-    event="BufRead",
-  },
-  {
     "SmiteshP/nvim-navic",
     lazy = true,
     init = function()
