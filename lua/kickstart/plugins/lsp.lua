@@ -57,6 +57,7 @@ return {
           -- nls.builtins.diagnostics.fish,
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.gofmt,
+          nls.builtins.formatting.jq,
           nls.builtins.formatting.prettier,
           -- nls.builtins.formatting.shfmt,
           -- nls.builtins.diagnostics.flake8,
