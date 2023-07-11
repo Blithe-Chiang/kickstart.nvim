@@ -108,7 +108,7 @@ vim.keymap.set('n', "gL",  function() vim.cmd('Git blame') end, {desc = "View fu
 vim.keymap.set('n', "<leader>ge",  function() vim.cmd('Gedit') end, {desc = "Edit current version of file" })
 vim.keymap.set('n', "<leader>gg",  function() vim.cmd('Git') end, {desc = "Open Fugitive" })
 vim.keymap.set('n', "<leader>gw", "<cmd>Git log -g stash<CR>", { desc = "List Git Stash" })
-vim.keymap.set('n', "<leader>gl", ':Git log --since=', { desc = "Recent Git Log" })
+vim.keymap.set('n', "<leader>gl", ':Git log ', { desc = "Git Log Prompt" })
 
 -- window management
 vim.keymap.set('n', "<leader>ww", "<C-w>o", { desc = "Color other window" })
