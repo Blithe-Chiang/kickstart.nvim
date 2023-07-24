@@ -25,7 +25,7 @@ map('n', '6gt', '<Cmd>BufferGoto 6<CR>', opts)
 map('n', '7gt', '<Cmd>BufferGoto 7<CR>', opts)
 map('n', '8gt', '<Cmd>BufferGoto 8<CR>', opts)
 map('n', '9gt', '<Cmd>BufferGoto 8<CR>', opts)
-map('n', '0gt', '<Cmd>BufferLast<CR>', opts)
+-- map('n', '0gt', '<Cmd>BufferLast<CR>', opts)
 
 -- Pin/unpin buffer
 map('n', '<M-p>', '<Cmd>BufferPin<CR>', opts)

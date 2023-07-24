@@ -7,7 +7,7 @@ return {
     -- surround
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
+    event = "BufRead",
     config = function()
       require("nvim-surround").setup({
         -- Configuration here, or leave empty to use defaults
@@ -101,7 +101,16 @@ return {
     -- search and replace
     "nvim-pack/nvim-spectre",
     tags = '*',
-    event = "BufRead",
+    keys = {
+      n = {
+        "<leader>S",
+        "<leader>sw",
+        "<leader>sp",
+      },
+      v = {
+        "<leader>sw",
+      }
+    },
     opts = function()
       return {
         mapping={
