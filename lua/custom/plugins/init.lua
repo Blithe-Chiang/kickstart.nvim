@@ -150,4 +150,10 @@ return {
       }
     end
   },
+  {
+    "RRethy/nvim-align",
+    cmd = {
+      "Align"
+    }
+  },
 }
