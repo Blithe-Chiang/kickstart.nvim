@@ -117,3 +117,6 @@ end
 
 
 vim.o.swapfile = false
+
+vim.opt.undodir = vim.fn.stdpath 'data' .. '/undodir'
+vim.opt.undofile = true

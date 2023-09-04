@@ -127,4 +127,4 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
   desc = "Search on current file"
 })
 
-
+vim.keymap.set('n', '<leader>uu', vim.cmd.UndotreeToggle, { desc = 'Toggle UndoTree' })
