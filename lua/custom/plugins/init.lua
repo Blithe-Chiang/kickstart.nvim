@@ -7,6 +7,12 @@ return {
     "mbbill/undotree"
   },
   {
+    'brenoprata10/nvim-highlight-colors',
+    config = function()
+      require('nvim-highlight-colors').setup {}
+    end
+  },
+  {
     -- surround
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
