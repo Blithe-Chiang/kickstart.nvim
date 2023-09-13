@@ -22,6 +22,15 @@ lsp.on_attach(function(client, bufnr)
     require("nvim-navic").attach(client, bufnr)
   end
 
+
+  local vmap = function(keys, func, desc)
+    if desc then
+      desc = 'LSP: ' .. desc
+    end
+
+    vim.keymap.set('v', keys, func, { buffer = bufnr, desc = desc })
+  end
+
   local nmap = function(keys, func, desc)
     if desc then
       desc = 'LSP: ' .. desc
@@ -34,6 +43,7 @@ lsp.on_attach(function(client, bufnr)
 
   nmap('<leader>lr', vim.lsp.buf.rename, '[R]ename')
   nmap('<leader>la', vim.lsp.buf.code_action, 'Code [A]ction')
+  vmap('<leader>la', vim.lsp.buf.code_action, 'Code [A]ction')
   nmap('<leader>ld', require('telescope.builtin').lsp_document_symbols, '[D]ocument symbols')
 
   nmap('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')

@@ -62,6 +62,9 @@ vim.keymap.set('n', "]Q", "<cmd>clast<cr>", { desc = "Last item in quickfix list
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>df', require('telescope.builtin').diagnostics, { desc = 'Open floating diagnostic message' })
+vim.keymap.set('n', '<leader>dd', function ()
+  require('telescope.builtin').diagnostics {bufnr = 0}
+end, { desc = 'Open floating diagnostic message in current buffer' })
 vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Pickup theme
