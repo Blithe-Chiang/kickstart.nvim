@@ -60,10 +60,6 @@ require('lazy').setup({
       vim.keymap.set('n', "<C-j>", require("smart-splits").move_cursor_down, { desc = "Move to below split" })
       vim.keymap.set('n', "<C-k>", require("smart-splits").move_cursor_up, { desc = "Move to above split" })
       vim.keymap.set('n', "<C-l>", require("smart-splits").move_cursor_right, { desc = "Move to right split" })
-      vim.keymap.set('n', "<C-Up>", require("smart-splits").resize_up, { desc = "Resize split up" })
-      vim.keymap.set('n', "<C-Down>", require("smart-splits").resize_down, { desc = "Resize split down" })
-      vim.keymap.set('n', "<C-Left>", require("smart-splits").resize_left, { desc = "Resize split left" })
-      vim.keymap.set('n', "<C-Right>", require("smart-splits").resize_right, { desc = "Resize split right" })
       return {
         ignored_filetypes = { "nofile", "quickfix", "qf", "prompt" },
         ignored_buftypes = { "nofile" }
@@ -191,28 +187,6 @@ require('lazy').setup({
     end,
   },
 
-  {
-    -- Highlight, edit, and navigate code
-    'nvim-treesitter/nvim-treesitter',
-    event = "VeryLazy",
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-      "windwp/nvim-ts-autotag",
-      "JoosepAlviste/nvim-ts-context-commentstring",
-    },
-    build = ':TSUpdate',
-    opts = {
-      highlight = {
-        enable = true,
-        disable = function(_, bufnr) return vim.api.nvim_buf_line_count(bufnr) > 5000 end,
-      },
-      incremental_selection = { enable = true },
-      indent = { enable = true },
-      autotag = { enable = true },
-      context_commentstring = { enable = true, enable_autocmd = false },
-    },
-  },
-  require 'kickstart.plugins.lsp',
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -240,71 +214,6 @@ pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension, 'live_grep_args')
 -- vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
--- [[ Configure Treesitter ]]
--- See `:help nvim-treesitter`
-require('nvim-treesitter.configs').setup {
-  -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'vimdoc', 'vim' },
-
-  -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-  auto_install = false,
-
-  highlight = { enable = true },
-  indent = { enable = true, disable = { 'python' } },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      -- init_selection = '<c-space>',
-      -- node_incremental = '<c-space>',
-      -- scope_incremental = '<c-s>',
-      -- node_decremental = '<M-space>',
-    },
-  },
-  textobjects = {
-    select = {
-      enable = true,
-      lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-      keymaps = {
-        -- -- You can use the capture groups defined in textobjects.scm
-        -- ['aa'] = '@parameter.outer',
-        -- ['ia'] = '@parameter.inner',
-        -- ['af'] = '@function.outer',
-        -- ['if'] = '@function.inner',
-        -- ['ac'] = '@class.outer',
-        -- ['ic'] = '@class.inner',
-      },
-    },
-    move = {
-      enable = true,
-      set_jumps = true, -- whether to set jumps in the jumplist
-      goto_next_start = {
-        [']m'] = '@function.outer',
-        [']]'] = '@class.outer',
-      },
-      goto_next_end = {
-        [']M'] = '@function.outer',
-        [']['] = '@class.outer',
-      },
-      goto_previous_start = {
-        ['[m'] = '@function.outer',
-        ['[['] = '@class.outer',
-      },
-      goto_previous_end = {
-        ['[M'] = '@function.outer',
-        ['[]'] = '@class.outer',
-      },
-    },
-    swap = {
-      enable = true,
-      swap_next = {
-        ['<leader>a'] = '@parameter.inner',
-      },
-      swap_previous = {
-        ['<leader>A'] = '@parameter.inner',
-      },
-    },
-  },
-}
 
 
 -- The line beneath this is called `modeline`. See `:help modeline`
