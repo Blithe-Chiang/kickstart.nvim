@@ -155,24 +155,25 @@ return {
     -- better match. will parse comment correctly
     "andymass/vim-matchup",
     event = "BufRead",
+    enabled = false,
     config = function()
-      local group = vim.api.nvim_create_augroup('vim-match-mode-switch', { clear = true })
-      -- to v/V mode
-      vim.api.nvim_create_autocmd('ModeChanged', {
-        callback = function ()
-          vim.cmd[[NoMatchParen]]
-        end,
-        pattern = { '*:[vV]' },
-        group = group,
-      })
-      -- from v/V mode
-      vim.api.nvim_create_autocmd('ModeChanged', {
-        callback = function ()
-          vim.cmd[[DoMatchParen]]
-        end,
-        pattern = { '[vV]:*' },
-        group = group,
-      })
+      -- local group = vim.api.nvim_create_augroup('vim-match-mode-switch', { clear = true })
+      -- -- to v/V mode
+      -- vim.api.nvim_create_autocmd('ModeChanged', {
+      --   callback = function ()
+      --     vim.cmd[[NoMatchParen]]
+      --   end,
+      --   pattern = { '*:[vV]' },
+      --   group = group,
+      -- })
+      -- -- from v/V mode
+      -- vim.api.nvim_create_autocmd('ModeChanged', {
+      --   callback = function ()
+      --     vim.cmd[[DoMatchParen]]
+      --   end,
+      --   pattern = { '[vV]:*' },
+      --   group = group,
+      -- })
     end,
   },
   {
