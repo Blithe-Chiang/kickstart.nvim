@@ -9,6 +9,7 @@ vim.g.maplocalleader = leader
 
 -- disable builtin plugins
 vim.g.loaded_matchit = 1
+vim.g.loaded_matchparen = 1
 
 -- seperate options to dedicate file
 require("kickstart.options")
@@ -248,7 +249,11 @@ require('nvim-treesitter.configs').setup {
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
   auto_install = false,
-
+  matchup = {
+    -- enables vim-matchup integration
+    enable = true,
+    enable_quotes = true,
+  },
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
   incremental_selection = {
