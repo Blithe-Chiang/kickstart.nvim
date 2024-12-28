@@ -30,7 +30,7 @@ vim.keymap.set('n', "<leader>er", "<cmd>e!<cr>", { desc = "Discard File" })
 -- File tree
 vim.keymap.set('n', '<leader>ee', "<cmd>Neotree toggle<cr>", { desc = 'Toggle FileTree' })
 vim.keymap.set('n', '<leader>eg', "<cmd>Neotree toggle git_status<cr>", { desc = 'Toggle Git Status' })
-vim.keymap.set('n', '<leader>eo', "<cmd>NeoTreeReveal<cr>", { desc = 'Reveal in FileTree' })
+vim.keymap.set('n', '<leader>eo', "<cmd>Neotree reveal<cr>", { desc = 'Reveal in FileTree' })
 
 -- vim.keymap.set('n', "<C-s>", "<cmd>w!<cr>", { desc = "Force write" })
 -- see :h i_CTRL-Q
